@@ -17,7 +17,7 @@ import appStore from "../store";
 
 export default function TrackOrder() {
     const [data, setData] = useState('');
-    const [order, setOrder] = useState('rrrrrrrr');
+    const [order, setOrder] = useState('q1234567');
     const [showData, setShowData] = useState(false);
 
     //   const handleChangeRoute = (event) => {
@@ -26,8 +26,10 @@ export default function TrackOrder() {
 
     const fetchData = async () => {
         const data = await getOrderData(order);
+        appStore.updateTrackOrder(data[0])
         setData(data)
         console.log(data)
+        console.log(appStore.trackOrder)
 
     };
 
@@ -43,38 +45,40 @@ export default function TrackOrder() {
 
     return (
         <>
-            <Box sx={{ width: 500, border: '2px solid' }}>
+            <Box sx={
+                {
+                    border: '2px solid',
+                    display: 'flex',
+                    alignItems: 'center',
+                    // justifyContent: 'spa'
+                    padding: '0 20px'
+                }
+            }>
                 <h2>Отследить заказ</h2>
                 <TextField
+                    sx={{ width: '50%', margin: '0 20px' }}
                     margin="normal"
                     required
-                    fullWidth
+                    // fullWidth
                     label="номер заказа"
                     value={order}
                     onChange={e => setOrder(e.target.value)}
                 />
-                {/* {typeof data} */}
 
-                {showData &&
-                    //  data.map((orderI, index) => {
-                    // console.log(typeof data)
-                    // console.log(data)
-                    // return <h3 key={index}>{orderI.title} {orderI.from} {orderI.to} {orderI.current_geo}</h3>
-                    (data.length > 0
+                {/* {showData &&
+                    (data?.length > 0
                         ? <h3 >{data[0]?.title}: {data[0]?.from} - {data[0]?.to}, {data[0]?.current_geo}</h3>
                         : <h3>Заказ не найден</h3>
                     )
-                    // })
-                }
-
-
-                {/* {title: 'rrrrrrrr', from: 'Москва', to: 'Ярославль', current_geo: '111 111'}
-                {title: 'rrrrrrrr', from: 'Москва', to: 'Ярославль', current_geo: '111 111'} */}
+                } */}
 
 
 
-                <Button variant="outlined" onClick={() => fetchData()}>
-                    Показать
+
+
+                <Button sx={{ width: '300px' }}
+                    variant="outlined" onClick={() => fetchData()}>
+                    Отследить заказ
                 </Button>
             </Box>
 

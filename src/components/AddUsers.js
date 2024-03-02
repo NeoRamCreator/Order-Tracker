@@ -16,7 +16,7 @@ import Button from '@mui/material/Button';
 // "current_geo": "123 123"
 export default function AddUsers() {
     const [fullName, setFullName] = useState('');
-    const [currentGeo, setCurrentGeo] = useState('111 111');
+    const [currentGeo, setCurrentGeo] = useState('58.993450 31.751108');
     // const [getRoute, setGetRoute] = useState();
 
     // const handleChangeRoute = (event) => {
