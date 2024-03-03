@@ -17,28 +17,16 @@ import Button from '@mui/material/Button';
 export default function AddUsers() {
     const [fullName, setFullName] = useState('');
     const [currentGeo, setCurrentGeo] = useState('58.993450 31.751108');
-    // const [getRoute, setGetRoute] = useState();
 
-    // const handleChangeRoute = (event) => {
-    //     setRoute(event.target.value);
-    // };
-
-    // const fetchData = async () => {
-    //     const data = await getRoutes();
-    //     setGetRoute(data)
-    // };
-
-    // useEffect(() => {
-    //     if (!getRoute) {
-
-    //         fetchData();
-    //     }
-
-    // }, [])
 
     return (
         <>
-            <Box sx={{ width: 500, border: '2px solid' }}>
+            <Box sx={
+                {
+                    // width: 500,
+                    // border: '2px solid'
+                }
+            }>
                 <h2>Добавить транспорт</h2>
                 <TextField
                     margin="normal"

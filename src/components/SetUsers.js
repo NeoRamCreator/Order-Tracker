@@ -5,6 +5,7 @@ import { getUsers } from "../actions/user";
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TextField, Pagination } from '@mui/material';
 
 export default function SetUsers() {
   const [users, setUsers] = useState(null)
@@ -28,38 +29,62 @@ export default function SetUsers() {
   }, [users])
 
 
-//   "full_name": "Dima",   "current_geo": "123 123"
   return (
     <>
-      <Box sx={{ width: 500, border: '2px solid', position: 'relative' }}>
-      <Button variant="outlined" sx={{position: 'absolute', right: 0}} onClick={() => fetchData()}>ОБНОВИТЬ</Button>
+      <Box sx={
+        {
+          position: 'relative',
+          paddingTop: '30px',
+          margin: '30px 0'
+        }
+      }>
+        <Button variant="outlined" sx={{ position: 'absolute', right: 0 }} onClick={() => fetchData()}>ОБНОВИТЬ</Button>
 
-        <h2>Список водительей</h2>
-        {/* <Button variant="outlined" onClick={() => fetchData()}>ОБНОВИТЬ</Button> */}
-        {users && (
-          users.map(user => {
-            return (
-              <div style={styles.div} key={user.id}>
-                <Button variant="outlined" onClick={() => deleteUserItem(user.id)} >DELETE</Button>
-                <div>{user.id}</div>
-                <div>{user.full_name}</div>
-                <div>{user.current_geo}</div>
-                {/* <div></div> */}
-              </div>
-            )
-          })
-        )}
+        <Paper sx={{ width: '100%' }}>
+          <h2>Список водительей</h2>
+
+          <TableContainer component={Paper}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Дейcтвие</TableCell>
+                  <TableCell>ID</TableCell>
+                  <TableCell>Имя</TableCell>
+                  <TableCell>Местоположение</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+
+
+                {users && (
+                  users.map(user => {
+                    return (
+                      <TableRow key={user.id}>
+
+                        <TableCell >
+                          <Button sx={{ margin: '0px' }} variant="outlined" onClick={() => deleteUserItem(user.id)} >DELETE</Button>
+                        </TableCell>
+
+                        <TableCell>{user.id}</TableCell>
+                        <TableCell>{user.full_name}</TableCell>
+                        <TableCell>{user.current_geo}</TableCell>
+
+                      </TableRow>
+                    )
+                  })
+                )}
+
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+        </Paper>
+
+
+
       </Box>
 
     </>
   )
 }
 
-
-const styles = {
-  div: {
-    width: '500px',
-    display: 'flex',
-    justifyContent: 'space-between'
-  }
-}

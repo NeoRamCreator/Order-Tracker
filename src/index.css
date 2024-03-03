@@ -23,3 +23,13 @@ body {
   /* background: linear-gradient( rgba(138, 138, 138, 0.168) , #353535FF) */
 
 }
+a {
+  color: #E6DB74FF;
+  margin: 0 20px;
+  text-decoration: none;
+  /* margin: ; */
+}
+.active-link {
+  color: aliceblue;
+  font-weight: bold;
+}

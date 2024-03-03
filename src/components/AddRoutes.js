@@ -35,6 +35,14 @@ export default function AddRoutes() {
     }
   }, [])
 
+  const next = async () => {
+    createRoute({ "from": from, "to": to, 'current_geo': currentGeo });
+    fetchData();
+    setTo('');
+    setFrom('');
+    setCurrentGeo('');
+  }
+
   return (
     <>
       <Box sx={{ width: 500, border: '2px solid' }}>
@@ -84,7 +92,7 @@ export default function AddRoutes() {
           </FormControl>
         </Box>
 
-        <Button variant="outlined" onClick={() => createRoute({ "from": from, "to": to, 'current_geo': currentGeo })}>
+        <Button variant="outlined" onClick={() =>next() }>
           добавмит маршрут
         </Button>
       </Box>

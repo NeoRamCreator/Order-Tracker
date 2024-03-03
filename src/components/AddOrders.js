@@ -42,7 +42,12 @@ export default function AddOrders() {
 
   return (
     <>
-      <Box sx={{ width: 500, border: '2px solid' }}>
+      <Box sx={
+        {
+          // width: 500, 
+          // border: '2px solid' 
+        }
+      }>
         <h2>Добавить заказ</h2>
         <TextField
           margin="normal"
