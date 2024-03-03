@@ -4,7 +4,12 @@ import MapRoute from '../components/MapRoute';
 import Main from '../pages/Main';
 
 import trackOrder from './trackOrder';
-
+import orders from './orders';
+import routs from './routs';
+import users from './users';
+import setOrdersRout from './setOrders';
+import setRoutesRout from './setRoutes';
+import setUsersRout from './setUsers';
 
 
 
@@ -16,19 +21,19 @@ const routes = [
         // errorElement: <Error />,
         children: [
             {
-                // index: true,
+                index: true,
                 element: <Navigate to='/track-order' replace />
             },
 
             trackOrder,
 
-            // orders,
-            // users,
-            // routes,
+            orders,
+            users,
+            routs,
 
-            // setOrders,
-            // setUsers,
-            // setRoutes,
+            setOrdersRout,
+            setUsersRout,
+            setRoutesRout,
 
             // {
             //     path: '/*',

@@ -105,10 +105,10 @@ const MapRoute = () => {
       <div style={{}}>
         {/* <button onClick={() => test1()}>TEST</button> */}
 
-        {appStore.trackOrder?.title}
+        {/* {appStore.trackOrder?.title}
         {appStore.trackOrder && (
           <Button variant="outlined" onClick={() => findOrder()}>Отследить заказ</Button>
-        )}
+        )} */}
         {appStore.trackOrder &&
           <>
             <div><h3>Заказ: {appStore.trackOrder.title}</h3></div>
@@ -128,7 +128,7 @@ const MapRoute = () => {
               center: [55.751574, 37.573856], zoom: 6,
               controls: []
             }}
-            width="100%" height="600px"
+            width="100%" height="80vh"
             instanceRef={(ref) => setMapRef(ref)}
           >
             {mapRef

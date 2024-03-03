@@ -47,7 +47,8 @@ export default function TrackOrder() {
         <>
             <Box sx={
                 {
-                    border: '2px solid',
+                    // background: '#353535FF',
+                    // border: '2px solid',
                     display: 'flex',
                     alignItems: 'center',
                     // justifyContent: 'spa'
@@ -56,7 +57,7 @@ export default function TrackOrder() {
             }>
                 <h2>Отследить заказ</h2>
                 <TextField
-                    sx={{ width: '50%', margin: '0 20px' }}
+                    sx={{ width: '50%', margin: '0 20px', color: '#fff' }}
                     margin="normal"
                     required
                     // fullWidth
@@ -76,7 +77,7 @@ export default function TrackOrder() {
 
 
 
-                <Button sx={{ width: '300px' }}
+                <Button sx={{ width: '200px', padding: '14px 0' }}
                     variant="outlined" onClick={() => fetchData()}>
                     Отследить заказ
                 </Button>
